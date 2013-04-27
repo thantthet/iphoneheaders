@@ -52,7 +52,7 @@
 	UIDelayedAction* m_synchronizePreferencesAction;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	struct {
-		NSTimer* timer;
+		__unsafe_unretained NSTimer* timer;
 		GSEventRef eventToRepeat;
 		BOOL firstRepeat;
 	} m_hardwareRepeat;

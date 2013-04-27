@@ -61,10 +61,12 @@
  */
 -(NSString*)addInput:(NSString*)input flags:(unsigned)flags point:(CGPoint)point firstDelete:(unsigned*)charsToDelete fromVariantKey:(BOOL)fromVariantKey;
 
+- (NSString *)addInput:(NSString *)input flags:(unsigned)flags point:(CGPoint)point deletePreceding:(unsigned*)preceding deleteFollowing:(unsigned*)following fromVariantKey:(BOOL)variantKey;
+
 /*!
  Tells the input manager to replace the input string with the argument.
  
- This method is called only when some abrupt changes is made that the whole input string becomes invalid. Normally the 
+ This method is called only when some abrupt changes is made that the whole input string becomes invalid. Normally the
  @p input is the word containing the selected text / caret.
  */
 -(void)setInput:(NSString*)input;

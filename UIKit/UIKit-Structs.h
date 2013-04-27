@@ -14,6 +14,7 @@
 #import <GraphicsServices/GSHeartbeat.h>
 #import <QuartzCore/QuartzCore.h>
 #import <Availability2.h>
+#import <UIKit/UITextInputTraits.h>
 
 typedef struct {
 	unsigned char pathIndex;
@@ -417,12 +418,27 @@ extern "C" {
 	NSArray* UIKeyboardGetSupportedInputModes();
 	void UIKeyboardSetActiveInputModes(NSArray* modes);
 	NSBundle* UIKeyboardBundleForInputMode(NSString* mode);
+    Class UIKeyboardInputManagerClassForInputMode(NSString* mode);
+    BOOL UIKeyboardInputModeUsesKBStar(NSString* mode);
+    NSString* UIKeyboardGetKBStarKeyboardName(NSString* mode, NSString * orientation, UIKeyboardType type, UIKeyboardAppearance appearance);
+    BOOL UIKeyboardLayoutDefaultTypeForInputModeIsASCIICapable(NSString* mode);
 
 	extern NSString* UIKeyboardStringDismiss;
 	extern NSString* UIKeyboardStringConfirm;
 	extern NSString* UIKeyboardStringNextCandidate;
 	extern NSString* UIKeyboardKeyReturn;
 	extern NSString* UIKeyboardKeySpace;
+    
+    extern NSString* UIKBAttributeNameMoreAlternate;
+    extern NSString* UIKBAttributeNameMoreRendering;
+    extern NSString* UIKBAttributeNameShift;
+    extern NSString* UIKBAttributeNameIgnoreShiftState;
+    extern NSString* UIKBAttributeNameShiftAlternate;
+    extern NSString* UIKBAttributeNameShiftRendering;
+    extern NSString* UIKBAttributeNameAdaptiveKeys;
+    extern NSString* UIKBAttributeNameAutoshift;
+    extern NSString* UIKBAttributeNameShiftIsPlaneChooser;
+    extern NSString* UIKBAttributeNameShiftRendering;
 	
 	typedef struct _UIKBTheme {
 		// Foreground Gradient: For the background of the key.
